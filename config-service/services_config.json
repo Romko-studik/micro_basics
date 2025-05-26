@@ -1,0 +1,29 @@
+{
+    "logging": [
+      {
+        "ip": "localhost",
+        "port": 8071
+      },
+      {
+        "ip": "localhost",
+        "port": 8072
+      },
+      {
+        "ip": "localhost",
+        "port": 8073
+      }
+    ],
+    "messages": [
+      {
+        "ip": "localhost",
+        "port": 8010
+      }
+    ],
+    "facade": [
+      {
+        "ip": "localhost",
+        "port": 8000
+      }
+    ]
+  }
+  
