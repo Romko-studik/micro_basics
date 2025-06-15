@@ -12,17 +12,17 @@
         [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
         
   @app.on_event("shutdown")
-INFO:     Started server process [136228]
+INFO:     Started server process [295684]
 INFO:     Waiting for application startup.
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is STARTING
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is STARTED
 INFO:hazelcast.connection:Trying to connect to Address(host=127.0.0.1, port=5701)
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is CONNECTED
-INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):29ffef32-f8c3-4605-950e-b02bc2d22a45, server version: 5.5.0, local address: Address(host=127.0.0.1, port=58802)
+INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):19f1d136-c63a-4c99-b616-e0fa5847d361, server version: 5.5.0, local address: Address(host=127.0.0.1, port=56782)
 INFO:hazelcast.cluster:
 
 Members [1] {
-	Member [192.168.0.194]:5701 - 29ffef32-f8c3-4605-950e-b02bc2d22a45
+	Member [192.168.0.194]:5701 - 19f1d136-c63a-4c99-b616-e0fa5847d361
 }
 
 INFO:hazelcast.client:Client started
@@ -30,33 +30,20 @@ INFO:hazelcast_config:Hazelcast client connected: logging-service-8081
 INFO:__main__:Logging Service started on port 8081
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8073 (Press CTRL+C to quit)
-ERROR:hazelcast_config:Error retrieving all messages: object Future can't be used in 'await' expression
-INFO:__main__:Service 8081 - Retrieved all messages: 0 items
-INFO:     127.0.0.1:52836 - "GET /all HTTP/1.1" 200 OK
-WARNING:hazelcast.connection:Heartbeat failed over the connection: Connection(id=0, live=True, remote_address=Address(host=192.168.0.194, port=5701))
-INFO:hazelcast.connection:Connection(id=0, live=False, remote_address=Address(host=192.168.0.194, port=5701)) closed. Reason: Heartbeat timed out
-INFO:hazelcast.connection:Removed connection to Address(host=192.168.0.194, port=5701):29ffef32-f8c3-4605-950e-b02bc2d22a45, connection: Connection(id=0, live=False, remote_address=Address(host=192.168.0.194, port=5701))
-INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is DISCONNECTED
-INFO:hazelcast.connection:Trying to connect to Member [192.168.0.194]:5701 - 29ffef32-f8c3-4605-950e-b02bc2d22a45
-WARNING:hazelcast.connection:Error during initial connection to Member [192.168.0.194]:5701 - 29ffef32-f8c3-4605-950e-b02bc2d22a45
-Traceback (most recent call last):
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/connection.py", line 579, in _connect
-    return get_or_connect_func(target).result()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/future.py", line 255, in result
-    re_raise(self._exception, self._traceback)
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/util.py", line 448, in re_raise
-    raise exception.with_traceback(traceback)
-OSError: [Errno 101] ENETUNREACH
-INFO:hazelcast.connection:Trying to connect to Address(host=127.0.0.1, port=5701)
-INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is CONNECTED
-INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):29ffef32-f8c3-4605-950e-b02bc2d22a45, server version: 5.5.0, local address: Address(host=127.0.0.1, port=52380)
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is SHUTTING_DOWN
-INFO:hazelcast.connection:Removed connection to Address(host=192.168.0.194, port=5701):29ffef32-f8c3-4605-950e-b02bc2d22a45, connection: Connection(id=2, live=False, remote_address=Address(host=192.168.0.194, port=5701))
-INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is DISCONNECTED
-INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is SHUTDOWN
-INFO:hazelcast_config:Hazelcast client disconnected
-INFO:     Application shutdown complete.
-INFO:     Finished server process [136228]
+INFO:hazelcast_config:Stored message: 106e7240-c32e-47e0-b88e-cfb2001c9077 = msg5
+INFO:__main__:Service 8073 - Stored: 106e7240-c32e-47e0-b88e-cfb2001c9077 -> msg5
+INFO:__main__:Service 8073 - Total messages in map: 5
+Service 8073 - Received message: 106e7240-c32e-47e0-b88e-cfb2001c9077 -> msg5
+INFO:     127.0.0.1:36196 - "POST /log HTTP/1.1" 200 OK
+INFO:hazelcast_config:Stored message: 3e453149-f2be-4396-b360-f3f775627151 = msg7
+INFO:__main__:Service 8073 - Stored: 3e453149-f2be-4396-b360-f3f775627151 -> msg7
+INFO:__main__:Service 8073 - Total messages in map: 7
+Service 8073 - Received message: 3e453149-f2be-4396-b360-f3f775627151 -> msg7
+INFO:     127.0.0.1:36202 - "POST /log HTTP/1.1" 200 OK
+INFO:hazelcast_config:Stored message: 412a4aa7-c798-4bbb-8ca8-44bf41200001 = msg9
+INFO:__main__:Service 8073 - Stored: 412a4aa7-c798-4bbb-8ca8-44bf41200001 -> msg9
+INFO:__main__:Service 8073 - Total messages in map: 9
+Service 8073 - Received message: 412a4aa7-c798-4bbb-8ca8-44bf41200001 -> msg9
+INFO:     127.0.0.1:36210 - "POST /log HTTP/1.1" 200 OK
+INFO:__main__:Service 8081 - Retrieved all messages: 10 items
+INFO:     127.0.0.1:36224 - "GET /all HTTP/1.1" 200 OK

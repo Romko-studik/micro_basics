@@ -14,15 +14,15 @@
 
 Декілька разів отримуємо об'єднані повідомлення з facade-service...
 Запит GET /get, спроба 1:
-{"response":"{\"messages\":[]}\n---\n{\"messages\":[\"msg2\",\"msg4\",\"msg6\",\"msg8\",\"msg10\"]}"}
+{"response":"{\"messages\":[\"msg2\",\"msg7\",\"msg4\",\"msg10\",\"msg5\",\"msg9\",\"msg6\",\"msg1\",\"msg3\",\"msg8\"]}\n---\n{\"messages\":[\"msg1\",\"msg3\",\"msg5\",\"msg7\",\"msg9\"]}"}
 ---
 
 Запит GET /get, спроба 2:
-{"response":"{\"messages\":[]}\n---\n{\"messages\":[\"msg1\",\"msg3\",\"msg5\",\"msg7\",\"msg9\"]}"}
+{"response":"{\"messages\":[\"msg2\",\"msg7\",\"msg4\",\"msg10\",\"msg5\",\"msg9\",\"msg6\",\"msg1\",\"msg3\",\"msg8\"]}\n---\n{\"messages\":[\"msg2\",\"msg4\",\"msg6\",\"msg8\",\"msg10\"]}"}
 ---
 
 Запит GET /get, спроба 3:
-{"response":"{\"messages\":[]}\n---\n{\"messages\":[\"msg2\",\"msg4\",\"msg6\",\"msg8\",\"msg10\"]}"}
+{"response":"{\"messages\":[\"msg2\",\"msg7\",\"msg4\",\"msg10\",\"msg5\",\"msg9\",\"msg6\",\"msg1\",\"msg3\",\"msg8\"]}\n---\n{\"messages\":[\"msg1\",\"msg3\",\"msg5\",\"msg7\",\"msg9\"]}"}
 ---
 
 Перевірте логи logging-service та messages-service для отриманих повідомлень.

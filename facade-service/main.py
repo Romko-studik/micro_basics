@@ -94,7 +94,16 @@ async def post_msg(request: Request):
     data = await request.json()
     msg_id = str(uuid4())
     payload = {"id": msg_id, "msg": data["msg"]}
-
+    logging_url = logging_client._get_random_instance()+ "/log"
+    # Send to Logging Service
+    async with httpx.AsyncClient() as client:
+        try:
+            response = await client.post(logging_url, json=payload)
+            response.raise_for_status()
+            logger.info(f"Logged message {msg_id} to logging service")
+        except httpx.HTTPStatusError as e:
+            logger.error(f"Failed to log message: {e}")
+            return {"error": "Failed to log message", "details": str(e)}
     # Send to Hazelcast Queue
     hazelcast_manager.queue.put(json.dumps(payload))
     logger.info(f"Enqueued message {payload}")
@@ -112,11 +121,13 @@ async def get_msgs():
         if not message_url:
             return {"error": "No message service instance available"}
 
-        log_resp = await client.get(logging_get_url + "/all")
-        msg_resp = await client.get(message_url)
+        log_resp =await client.get(logging_get_url + "/all")
+        msg_resp =await client.get(message_url)
 
     combined = log_resp.text + "\n---\n" + msg_resp.text
     return {"response": combined}
+
+
 
 
 if __name__ == "__main__":

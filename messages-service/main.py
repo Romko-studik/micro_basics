@@ -19,7 +19,7 @@ logger = logging.getLogger("messages-service")
 
 
 @app.on_event("startup")
-async def startup_event():
+def startup_event():
     loop = asyncio.get_running_loop()
     
     async def consume():
