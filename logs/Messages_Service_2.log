@@ -12,30 +12,28 @@
         [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
         
   @app.on_event("shutdown")
-INFO:     Started server process [247709]
+INFO:     Started server process [331227]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8011 (Press CTRL+C to quit)
-INFO:     192.168.0.194:34204 - "GET /health HTTP/1.1" 200 OK
-INFO:     192.168.0.194:54340 - "GET /health HTTP/1.1" 200 OK
-INFO:     192.168.0.194:38676 - "GET /health HTTP/1.1" 200 OK
-[messages-service] Stored: {'id': '244c4bbd-1352-4fc7-b11e-7fab234a900b', 'msg': 'msg2'}
-[messages-service] Stored: {'id': '682eb46c-e1d9-4ac0-b3f6-f3f3551e2f3c', 'msg': 'msg4'}
-[messages-service] Stored: {'id': 'af85340a-e4c2-4cea-9157-e31f6b33438c', 'msg': 'msg6'}
-[messages-service] Stored: {'id': 'fa851949-d2c3-4aa0-9ad6-376f225bc868', 'msg': 'msg8'}
-[messages-service] Stored: {'id': '66393978-cbc7-488b-a55b-27bc61961e3f', 'msg': 'msg10'}
-INFO:     127.0.0.1:56024 - "GET /message HTTP/1.1" 200 OK
-INFO:     192.168.0.194:57494 - "GET /health HTTP/1.1" 200 OK
-Error taking from queue: Heartbeat timed out
-INFO:     192.168.0.194:54226 - "GET /health HTTP/1.1" 200 OK
-INFO:     192.168.0.194:37044 - "GET /health HTTP/1.1" 200 OK
-Error taking from queue: Heartbeat timed out
-INFO:     192.168.0.194:52920 - "GET /health HTTP/1.1" 200 OK
-INFO:     192.168.0.194:36070 - "GET /health HTTP/1.1" 200 OK
-INFO:     192.168.0.194:56862 - "GET /health HTTP/1.1" 200 OK
-INFO:     192.168.0.194:53872 - "GET /health HTTP/1.1" 200 OK
-INFO:     192.168.0.194:39678 - "GET /health HTTP/1.1" 200 OK
-INFO:     192.168.0.194:42016 - "GET /health HTTP/1.1" 200 OK
-INFO:     192.168.0.194:58018 - "GET /health HTTP/1.1" 200 OK
-INFO:     192.168.0.194:47364 - "GET /health HTTP/1.1" 200 OK
-INFO:     192.168.0.194:37746 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:59942 - "GET /health HTTP/1.1" 200 OK
+[messages-service] Stored: {'id': '5c6006b7-1dd7-4190-9eba-ce47952f6548', 'msg': 'msg2'}
+[messages-service] Stored: {'id': 'f794db53-cd44-4af6-9a5b-04ebb139b17d', 'msg': 'msg4'}
+INFO:     192.168.0.194:59958 - "POST /log HTTP/1.1" 404 Not Found
+[messages-service] Stored: {'id': 'b2c9b13f-df79-4cc5-b39c-2dfd05d8f6cd', 'msg': 'msg6'}
+INFO:     192.168.0.194:59968 - "POST /log HTTP/1.1" 404 Not Found
+[messages-service] Stored: {'id': '66374e85-9b7c-441c-914a-5f4696f052d2', 'msg': 'msg8'}
+INFO:     192.168.0.194:59970 - "POST /log HTTP/1.1" 404 Not Found
+[messages-service] Stored: {'id': '2634e76c-ea4f-4b80-826a-b74a2ad3ee76', 'msg': 'msg10'}
+INFO:     192.168.0.194:59980 - "GET /message HTTP/1.1" 200 OK
+INFO:     192.168.0.194:59992 - "GET /message HTTP/1.1" 200 OK
+INFO:     192.168.0.194:56064 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:40076 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:45416 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:54776 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:51412 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:47220 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:41572 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:45434 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:35962 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:59760 - "GET /health HTTP/1.1" 200 OK

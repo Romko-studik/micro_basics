@@ -5,22 +5,9 @@
         [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
         
   @app.on_event("startup")
-INFO:     Started server process [247212]
+INFO:     Started server process [330702]
 INFO:     Waiting for application startup.
-INFO:__main__:Loaded services from config file: ['logging', 'messages', 'facade']
-INFO:__main__:Config Server started with services: ['logging', 'messages', 'facade']
+INFO:__main__:Loaded services from config file: ['facade']
+INFO:__main__:Config Server started with services: ['facade']
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8005 (Press CTRL+C to quit)
-INFO:__main__:Returning 3 active instances for service 'logging'
-Loading services from config file...
-INFO:     127.0.0.1:52206 - "GET /services/logging HTTP/1.1" 200 OK
-INFO:__main__:Returning 2 active instances for service 'messages'
-INFO:     127.0.0.1:52216 - "GET /services/messages HTTP/1.1" 200 OK
-INFO:__main__:Returning 3 active instances for service 'logging'
-INFO:     127.0.0.1:52228 - "GET /services/logging HTTP/1.1" 200 OK
-INFO:__main__:Returning 2 active instances for service 'messages'
-INFO:     127.0.0.1:52242 - "GET /services/messages HTTP/1.1" 200 OK
-INFO:__main__:Returning 3 active instances for service 'logging'
-INFO:     127.0.0.1:52244 - "GET /services/logging HTTP/1.1" 200 OK
-INFO:__main__:Returning 2 active instances for service 'messages'
-INFO:     127.0.0.1:52248 - "GET /services/messages HTTP/1.1" 200 OK

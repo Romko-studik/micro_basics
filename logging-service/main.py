@@ -86,7 +86,7 @@ async def log_msg(log_message: LogMessage):
             return MessageResponse(status="duplicate", message=f"Message {log_message.id} already exists")
         
         # Store new message
-        hazelcast_manager.put_message(log_message.id, log_message.msg)
+        await hazelcast_manager.put_message(log_message.id, log_message.msg)
         logger.info(f"Service {port} - Stored: {log_message.id} -> {log_message.msg}")
         logger.info(f"Service {port} - Total messages in map: {hazelcast_manager.get_map_size()}")
         
@@ -97,7 +97,7 @@ async def log_msg(log_message: LogMessage):
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/log/{message_id}")
-async def get_message(message_id: str):
+def get_message(message_id: str):
     try:
         port = os.getenv("SERVICE_PORT", "8081")
         message = hazelcast_manager.get_message(message_id)
@@ -116,10 +116,10 @@ async def get_message(message_id: str):
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/all")
-async def get_all():
+def get_all():
     try:
         port = os.getenv("SERVICE_PORT", "8081")
-        all_messages = await hazelcast_manager.get_all_messages()
+        all_messages = hazelcast_manager.get_all_messages()
         
         logger.info(f"Service {port} - Retrieved all messages: {len(all_messages)} items")
         
@@ -128,6 +128,7 @@ async def get_all():
     except Exception as e:
         logger.error(f"Error retrieving all messages: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
 
 @app.on_event("shutdown")
 async def shutdown_event():

@@ -130,6 +130,14 @@ async def post_msg(request: Request):
 
     # Send to Hazelcast Queue
     hazelcast_manager.queue.put(json.dumps(payload))
+    # Send to Messages Service
+    msg_service_url = pick_random("messages-service")
+    msg_post_url = f"http://{msg_service_url[0]}:{msg_service_url[1]}/log"
+    async with httpx.AsyncClient() as client:
+        response = await client.post(msg_post_url, json=payload)
+        if response.status_code != 200:
+            logger.error(f"Failed to post message to messages service: {response.text}")
+            return {"status": "error", "message": "Failed to post message"}
     logger.info(f"Enqueued message {payload}")
     return {"status": "queued", "id": msg_id}
 
@@ -142,7 +150,6 @@ async def get_msgs():
     # messages
     host2, port2 = pick_random("messages-service")
     msg_url = f"http://{host2}:{port2}/message"
-    # виконуємо HTTP
     async with httpx.AsyncClient() as client:
         log_resp = await client.get(log_url)
         msg_resp = await client.get(msg_url)

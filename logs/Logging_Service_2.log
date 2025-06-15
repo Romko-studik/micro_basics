@@ -1,18 +1,25 @@
-/home/romko/Documents/UNI/APZ/micro_basics/logging-service/main.py:44: DeprecationWarning: 
+/home/romko/Documents/UNI/APZ/micro_basics/logging-service/main.py:54: DeprecationWarning: 
         on_event is deprecated, use lifespan event handlers instead.
 
         Read more about it in the
         [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
         
   @app.on_event("startup")
-/home/romko/Documents/UNI/APZ/micro_basics/logging-service/main.py:58: DeprecationWarning: 
+/home/romko/Documents/UNI/APZ/micro_basics/logging-service/main.py:70: DeprecationWarning: 
         on_event is deprecated, use lifespan event handlers instead.
 
         Read more about it in the
         [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
         
   @app.on_event("shutdown")
-INFO:     Started server process [247430]
+/home/romko/Documents/UNI/APZ/micro_basics/logging-service/main.py:133: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [330979]
 INFO:     Waiting for application startup.
 INFO:hazelcast_config:Connecting Hazelcast to cluster 'dev' at ['127.0.0.1:5701', '127.0.0.1:5702']
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is STARTING
@@ -43,11 +50,11 @@ Traceback (most recent call last):
 hazelcast.errors.TargetDisconnectedError: [Errno 111] Connection refused
 INFO:hazelcast.connection:Trying to connect to Address(host=127.0.0.1, port=5701)
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is CONNECTED
-INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):bb7a7017-18a8-41e4-8f0e-4dece8399760, server version: 5.5.0, local address: Address(host=127.0.0.1, port=35020)
+INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):48ddecd8-25d7-483b-aa45-710d8246e9d6, server version: 5.5.0, local address: Address(host=127.0.0.1, port=60940)
 INFO:hazelcast.cluster:
 
 Members [1] {
-	Member [192.168.0.194]:5701 - bb7a7017-18a8-41e4-8f0e-4dece8399760
+	Member [192.168.0.194]:5701 - 48ddecd8-25d7-483b-aa45-710d8246e9d6
 }
 
 INFO:hazelcast.client:Client started
@@ -55,63 +62,17 @@ INFO:hazelcast_config:Hazelcast client connected: logging-service-8081
 INFO:__main__:Logging Service started on port 8081
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8072 (Press CTRL+C to quit)
-WARNING:hazelcast.connection:Heartbeat failed over the connection: Connection(id=1, live=True, remote_address=Address(host=192.168.0.194, port=5701))
-INFO:hazelcast.connection:Connection(id=1, live=False, remote_address=Address(host=192.168.0.194, port=5701)) closed. Reason: Heartbeat timed out
-INFO:hazelcast.connection:Removed connection to Address(host=192.168.0.194, port=5701):bb7a7017-18a8-41e4-8f0e-4dece8399760, connection: Connection(id=1, live=False, remote_address=Address(host=192.168.0.194, port=5701))
-INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is DISCONNECTED
-INFO:hazelcast.connection:Trying to connect to Member [192.168.0.194]:5701 - bb7a7017-18a8-41e4-8f0e-4dece8399760
-WARNING:hazelcast.connection:Error during initial connection to Member [192.168.0.194]:5701 - bb7a7017-18a8-41e4-8f0e-4dece8399760
-Traceback (most recent call last):
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/connection.py", line 579, in _connect
-    return get_or_connect_func(target).result()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/future.py", line 255, in result
-    re_raise(self._exception, self._traceback)
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/util.py", line 448, in re_raise
-    raise exception.with_traceback(traceback)
-OSError: [Errno 101] ENETUNREACH
-INFO:hazelcast.connection:Trying to connect to Address(host=127.0.0.1, port=5702)
-INFO:hazelcast.connection:Connection(id=3, live=False, remote_address=None) closed. Reason: [Errno 111] Connection refused
-WARNING:hazelcast.connection:Error during initial connection to Address(host=127.0.0.1, port=5702)
-Traceback (most recent call last):
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/connection.py", line 579, in _connect
-    return get_or_connect_func(target).result()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/future.py", line 63, in result
-    re_raise(self._exception, self._traceback)
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/util.py", line 450, in re_raise
-    raise exception
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/future.py", line 154, in callback
-    result = continuation_func(f, *args)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/connection.py", line 626, in _on_auth
-    raise e
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/connection.py", line 623, in _on_auth
-    response = client_authentication_codec.decode_response(response.result())
-                                                           ^^^^^^^^^^^^^^^^^
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/future.py", line 63, in result
-    re_raise(self._exception, self._traceback)
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/util.py", line 450, in re_raise
-    raise exception
-hazelcast.errors.TargetDisconnectedError: [Errno 111] Connection refused
-INFO:hazelcast.connection:Trying to connect to Address(host=127.0.0.1, port=5701)
-INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is CONNECTED
-INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):bb7a7017-18a8-41e4-8f0e-4dece8399760, server version: 5.5.0, local address: Address(host=127.0.0.1, port=53218)
-WARNING:hazelcast.connection:Heartbeat failed over the connection: Connection(id=4, live=True, remote_address=Address(host=192.168.0.194, port=5701))
-INFO:hazelcast.connection:Connection(id=4, live=False, remote_address=Address(host=192.168.0.194, port=5701)) closed. Reason: Heartbeat timed out
-INFO:hazelcast.connection:Removed connection to Address(host=192.168.0.194, port=5701):bb7a7017-18a8-41e4-8f0e-4dece8399760, connection: Connection(id=4, live=False, remote_address=Address(host=192.168.0.194, port=5701))
-INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is DISCONNECTED
-INFO:hazelcast.connection:Trying to connect to Member [192.168.0.194]:5701 - bb7a7017-18a8-41e4-8f0e-4dece8399760
-WARNING:hazelcast.connection:Error during initial connection to Member [192.168.0.194]:5701 - bb7a7017-18a8-41e4-8f0e-4dece8399760
-Traceback (most recent call last):
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/connection.py", line 579, in _connect
-    return get_or_connect_func(target).result()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/future.py", line 255, in result
-    re_raise(self._exception, self._traceback)
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/util.py", line 448, in re_raise
-    raise exception.with_traceback(traceback)
-OSError: [Errno 101] ENETUNREACH
-INFO:hazelcast.connection:Trying to connect to Address(host=127.0.0.1, port=5701)
-INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is CONNECTED
-INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):bb7a7017-18a8-41e4-8f0e-4dece8399760, server version: 5.5.0, local address: Address(host=127.0.0.1, port=40522)
+INFO:     192.168.0.194:45716 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:45632 - "GET /health HTTP/1.1" 200 OK
+INFO:__main__:Service 8081 - Retrieved all messages: 0 items
+INFO:     192.168.0.194:45678 - "GET /all HTTP/1.1" 200 OK
+INFO:     192.168.0.194:45680 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:40864 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:42926 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:33432 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:34102 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:57346 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:44198 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:36822 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:59398 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:53800 - "GET /health HTTP/1.1" 200 OK

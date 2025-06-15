@@ -1,47 +1,30 @@
-/home/romko/Documents/UNI/APZ/micro_basics/facade-service/main.py:90: DeprecationWarning: 
+/home/romko/Documents/UNI/APZ/micro_basics/facade-service/main.py:109: DeprecationWarning: 
         on_event is deprecated, use lifespan event handlers instead.
 
         Read more about it in the
         [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
         
   @app.on_event("startup")
-INFO:     Started server process [247817]
+/home/romko/Documents/UNI/APZ/micro_basics/facade-service/main.py:158: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [331330]
 INFO:     Waiting for application startup.
 INFO:__main__:Facade Service started and clients initialized
 INFO:hazelcast_config:Connecting Hazelcast to cluster 'dev' at ['127.0.0.1:5701', '127.0.0.1:5702']
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is STARTING
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is STARTED
-INFO:hazelcast.connection:Trying to connect to Address(host=127.0.0.1, port=5702)
-INFO:hazelcast.connection:Connection(id=0, live=False, remote_address=None) closed. Reason: [Errno 111] Connection refused
-WARNING:hazelcast.connection:Error during initial connection to Address(host=127.0.0.1, port=5702)
-Traceback (most recent call last):
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/connection.py", line 579, in _connect
-    return get_or_connect_func(target).result()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/future.py", line 63, in result
-    re_raise(self._exception, self._traceback)
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/util.py", line 450, in re_raise
-    raise exception
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/future.py", line 154, in callback
-    result = continuation_func(f, *args)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/connection.py", line 626, in _on_auth
-    raise e
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/connection.py", line 623, in _on_auth
-    response = client_authentication_codec.decode_response(response.result())
-                                                           ^^^^^^^^^^^^^^^^^
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/future.py", line 63, in result
-    re_raise(self._exception, self._traceback)
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/util.py", line 450, in re_raise
-    raise exception
-hazelcast.errors.TargetDisconnectedError: [Errno 111] Connection refused
 INFO:hazelcast.connection:Trying to connect to Address(host=127.0.0.1, port=5701)
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is CONNECTED
-INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):bb7a7017-18a8-41e4-8f0e-4dece8399760, server version: 5.5.0, local address: Address(host=127.0.0.1, port=32936)
+INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):48ddecd8-25d7-483b-aa45-710d8246e9d6, server version: 5.5.0, local address: Address(host=127.0.0.1, port=60542)
 INFO:hazelcast.cluster:
 
 Members [1] {
-	Member [192.168.0.194]:5701 - bb7a7017-18a8-41e4-8f0e-4dece8399760
+	Member [192.168.0.194]:5701 - 48ddecd8-25d7-483b-aa45-710d8246e9d6
 }
 
 INFO:hazelcast.client:Client started
@@ -49,86 +32,53 @@ INFO:hazelcast_config:Hazelcast client connected: facade-service
 INFO:__main__:Connected to Hazelcast cluster for distributed storage
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
-INFO:__main__:Enqueued message {'id': '06c9868b-c491-45e4-9cb3-e3006e49fd63', 'msg': 'msg1'}
-INFO:     127.0.0.1:60998 - "POST /post HTTP/1.1" 200 OK
-INFO:__main__:Enqueued message {'id': '244c4bbd-1352-4fc7-b11e-7fab234a900b', 'msg': 'msg2'}
-INFO:     127.0.0.1:32778 - "POST /post HTTP/1.1" 200 OK
-INFO:__main__:Enqueued message {'id': 'c099b171-89f6-45b5-b64c-7256788ba680', 'msg': 'msg3'}
-INFO:     127.0.0.1:32790 - "POST /post HTTP/1.1" 200 OK
-INFO:__main__:Enqueued message {'id': '682eb46c-e1d9-4ac0-b3f6-f3f3551e2f3c', 'msg': 'msg4'}
-INFO:     127.0.0.1:32794 - "POST /post HTTP/1.1" 200 OK
-INFO:__main__:Enqueued message {'id': '2df2f760-7c96-4e9a-9ca3-a607dafabcee', 'msg': 'msg5'}
-INFO:     127.0.0.1:32806 - "POST /post HTTP/1.1" 200 OK
-INFO:__main__:Enqueued message {'id': 'af85340a-e4c2-4cea-9157-e31f6b33438c', 'msg': 'msg6'}
-INFO:     127.0.0.1:32818 - "POST /post HTTP/1.1" 200 OK
-INFO:__main__:Enqueued message {'id': 'b2a8f14d-21ea-435f-b928-0343fa22e45d', 'msg': 'msg7'}
-INFO:     127.0.0.1:32822 - "POST /post HTTP/1.1" 200 OK
-INFO:__main__:Enqueued message {'id': 'fa851949-d2c3-4aa0-9ad6-376f225bc868', 'msg': 'msg8'}
-INFO:     127.0.0.1:32824 - "POST /post HTTP/1.1" 200 OK
-INFO:__main__:Enqueued message {'id': '259438f0-e1e7-4447-a27a-6bfb29dd9b76', 'msg': 'msg9'}
-INFO:     127.0.0.1:32834 - "POST /post HTTP/1.1" 200 OK
-INFO:__main__:Enqueued message {'id': '66393978-cbc7-488b-a55b-27bc61961e3f', 'msg': 'msg10'}
-INFO:     127.0.0.1:32850 - "POST /post HTTP/1.1" 200 OK
-INFO:__main__:Retrieved 3 instances for service 'logging'
-INFO:__main__:Selected logging service instance: http://localhost:8071
-INFO:__main__:Retrieved 2 instances for service 'messages'
-INFO:__main__:Selected message service instance: http://localhost:8010/message
-INFO:httpx:HTTP Request: GET http://localhost:8071/all "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: GET http://localhost:8010/message "HTTP/1.1 200 OK"
-http://localhost:8005/services/logging
-http://localhost:8005/services/messages
-INFO:     127.0.0.1:32866 - "GET /get HTTP/1.1" 200 OK
-INFO:__main__:Retrieved 3 instances for service 'logging'
-INFO:__main__:Selected logging service instance: http://localhost:8071
-INFO:__main__:Retrieved 2 instances for service 'messages'
-INFO:__main__:Selected message service instance: http://localhost:8011/message
-INFO:httpx:HTTP Request: GET http://localhost:8071/all "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: GET http://localhost:8011/message "HTTP/1.1 200 OK"
-http://localhost:8005/services/logging
-http://localhost:8005/services/messages
-INFO:     127.0.0.1:32880 - "GET /get HTTP/1.1" 200 OK
-INFO:__main__:Retrieved 3 instances for service 'logging'
-INFO:__main__:Selected logging service instance: http://localhost:8073
-INFO:__main__:Retrieved 2 instances for service 'messages'
-INFO:__main__:Selected message service instance: http://localhost:8010/message
-INFO:httpx:HTTP Request: GET http://localhost:8073/all "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: GET http://localhost:8010/message "HTTP/1.1 200 OK"
-http://localhost:8005/services/logging
-http://localhost:8005/services/messages
-INFO:     127.0.0.1:32894 - "GET /get HTTP/1.1" 200 OK
-WARNING:hazelcast.connection:Heartbeat failed over the connection: Connection(id=1, live=True, remote_address=Address(host=192.168.0.194, port=5701))
-INFO:hazelcast.connection:Connection(id=1, live=False, remote_address=Address(host=192.168.0.194, port=5701)) closed. Reason: Heartbeat timed out
-INFO:hazelcast.connection:Removed connection to Address(host=192.168.0.194, port=5701):bb7a7017-18a8-41e4-8f0e-4dece8399760, connection: Connection(id=1, live=False, remote_address=Address(host=192.168.0.194, port=5701))
-INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is DISCONNECTED
-INFO:hazelcast.connection:Trying to connect to Member [192.168.0.194]:5701 - bb7a7017-18a8-41e4-8f0e-4dece8399760
-WARNING:hazelcast.connection:Error during initial connection to Member [192.168.0.194]:5701 - bb7a7017-18a8-41e4-8f0e-4dece8399760
-Traceback (most recent call last):
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/connection.py", line 579, in _connect
-    return get_or_connect_func(target).result()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/future.py", line 255, in result
-    re_raise(self._exception, self._traceback)
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/util.py", line 448, in re_raise
-    raise exception.with_traceback(traceback)
-OSError: [Errno 101] ENETUNREACH
-INFO:hazelcast.connection:Trying to connect to Address(host=127.0.0.1, port=5701)
-INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is CONNECTED
-INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):bb7a7017-18a8-41e4-8f0e-4dece8399760, server version: 5.5.0, local address: Address(host=127.0.0.1, port=53230)
-WARNING:hazelcast.connection:Heartbeat failed over the connection: Connection(id=3, live=True, remote_address=Address(host=192.168.0.194, port=5701))
-INFO:hazelcast.connection:Connection(id=3, live=False, remote_address=Address(host=192.168.0.194, port=5701)) closed. Reason: Heartbeat timed out
-INFO:hazelcast.connection:Removed connection to Address(host=192.168.0.194, port=5701):bb7a7017-18a8-41e4-8f0e-4dece8399760, connection: Connection(id=3, live=False, remote_address=Address(host=192.168.0.194, port=5701))
-INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is DISCONNECTED
-INFO:hazelcast.connection:Trying to connect to Member [192.168.0.194]:5701 - bb7a7017-18a8-41e4-8f0e-4dece8399760
-WARNING:hazelcast.connection:Error during initial connection to Member [192.168.0.194]:5701 - bb7a7017-18a8-41e4-8f0e-4dece8399760
-Traceback (most recent call last):
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/connection.py", line 579, in _connect
-    return get_or_connect_func(target).result()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/future.py", line 255, in result
-    re_raise(self._exception, self._traceback)
-  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/util.py", line 448, in re_raise
-    raise exception.with_traceback(traceback)
-OSError: [Errno 101] ENETUNREACH
-INFO:hazelcast.connection:Trying to connect to Address(host=127.0.0.1, port=5701)
-INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is CONNECTED
-INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):bb7a7017-18a8-41e4-8f0e-4dece8399760, server version: 5.5.0, local address: Address(host=127.0.0.1, port=40494)
+INFO:     192.168.0.194:59302 - "GET /health HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://192.168.0.194:8010/log "HTTP/1.1 404 Not Found"
+ERROR:__main__:Failed to post message to messages service: {"detail":"Not Found"}
+INFO:     127.0.0.1:46000 - "POST /post HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://192.168.0.194:8010/log "HTTP/1.1 404 Not Found"
+ERROR:__main__:Failed to post message to messages service: {"detail":"Not Found"}
+INFO:     127.0.0.1:46008 - "POST /post HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://192.168.0.194:8010/log "HTTP/1.1 404 Not Found"
+ERROR:__main__:Failed to post message to messages service: {"detail":"Not Found"}
+INFO:     127.0.0.1:46012 - "POST /post HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://192.168.0.194:8010/log "HTTP/1.1 404 Not Found"
+ERROR:__main__:Failed to post message to messages service: {"detail":"Not Found"}
+INFO:     127.0.0.1:46016 - "POST /post HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://192.168.0.194:8011/log "HTTP/1.1 404 Not Found"
+ERROR:__main__:Failed to post message to messages service: {"detail":"Not Found"}
+INFO:     127.0.0.1:46026 - "POST /post HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://192.168.0.194:8010/log "HTTP/1.1 404 Not Found"
+ERROR:__main__:Failed to post message to messages service: {"detail":"Not Found"}
+INFO:     127.0.0.1:46028 - "POST /post HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://192.168.0.194:8011/log "HTTP/1.1 404 Not Found"
+ERROR:__main__:Failed to post message to messages service: {"detail":"Not Found"}
+INFO:     127.0.0.1:46044 - "POST /post HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://192.168.0.194:8010/log "HTTP/1.1 404 Not Found"
+ERROR:__main__:Failed to post message to messages service: {"detail":"Not Found"}
+INFO:     127.0.0.1:46054 - "POST /post HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://192.168.0.194:8011/log "HTTP/1.1 404 Not Found"
+ERROR:__main__:Failed to post message to messages service: {"detail":"Not Found"}
+INFO:     127.0.0.1:46066 - "POST /post HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://192.168.0.194:8010/log "HTTP/1.1 404 Not Found"
+ERROR:__main__:Failed to post message to messages service: {"detail":"Not Found"}
+INFO:     127.0.0.1:46082 - "POST /post HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET http://192.168.0.194:8072/all "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://192.168.0.194:8010/message "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:46096 - "GET /get HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET http://192.168.0.194:8071/all "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://192.168.0.194:8011/message "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:46100 - "GET /get HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET http://192.168.0.194:8073/all "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://192.168.0.194:8011/message "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:46110 - "GET /get HTTP/1.1" 200 OK
+INFO:     192.168.0.194:58402 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:37976 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:50088 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:48202 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:51096 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:59260 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:57382 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:37708 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:45894 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:58056 - "GET /health HTTP/1.1" 200 OK

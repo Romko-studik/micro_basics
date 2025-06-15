@@ -44,34 +44,34 @@ class HazelcastManager:
     async def put_message(self, key: str, message: str):
         try:
             if self.messages_map:
-                await self.messages_map.put(key, message)
+                self.messages_map.put(key, message).result()
                 logger.info(f"Stored message: {key} = {message}")
             else:
                 logger.warning("Hazelcast map not initialized")
         except Exception as e:
             logger.error(f"Error storing message: {e}")
 
-    async def get_message(self, key: str) -> str:
+    def get_message(self, key: str) -> str:
         try:
             if self.messages_map:
-                return await self.messages_map.get(key)
+                return self.messages_map.get(key).result()
         except Exception as e:
             logger.error(f"Error retrieving message: {e}")
         return None
 
-    async def get_all_messages(self) -> dict:
+    def get_all_messages(self) -> dict:
         try:
             if self.messages_map:
-                entries = await self.messages_map.entry_set()
+                entries = self.messages_map.entry_set().result()
                 return dict(entries)
         except Exception as e:
             logger.error(f"Error retrieving all messages: {e}")
         return {}
 
-    async def get_map_size(self) -> int:
+    def get_map_size(self) -> int:
         try:
             if self.messages_map:
-                return await self.messages_map.size()
+                return self.messages_map.size().result()
         except Exception as e:
             logger.error(f"Error getting map size: {e}")
         return 0
