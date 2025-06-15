@@ -12,17 +12,17 @@
         [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
         
   @app.on_event("shutdown")
-INFO:     Started server process [295684]
+INFO:     Started server process [297532]
 INFO:     Waiting for application startup.
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is STARTING
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is STARTED
 INFO:hazelcast.connection:Trying to connect to Address(host=127.0.0.1, port=5701)
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is CONNECTED
-INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):19f1d136-c63a-4c99-b616-e0fa5847d361, server version: 5.5.0, local address: Address(host=127.0.0.1, port=56782)
+INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):39ee8dad-7522-4e9f-a17f-aca0f0e70b4e, server version: 5.5.0, local address: Address(host=127.0.0.1, port=60642)
 INFO:hazelcast.cluster:
 
 Members [1] {
-	Member [192.168.0.194]:5701 - 19f1d136-c63a-4c99-b616-e0fa5847d361
+	Member [192.168.0.194]:5701 - 39ee8dad-7522-4e9f-a17f-aca0f0e70b4e
 }
 
 INFO:hazelcast.client:Client started
@@ -30,20 +30,25 @@ INFO:hazelcast_config:Hazelcast client connected: logging-service-8081
 INFO:__main__:Logging Service started on port 8081
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8073 (Press CTRL+C to quit)
-INFO:hazelcast_config:Stored message: 106e7240-c32e-47e0-b88e-cfb2001c9077 = msg5
-INFO:__main__:Service 8073 - Stored: 106e7240-c32e-47e0-b88e-cfb2001c9077 -> msg5
-INFO:__main__:Service 8073 - Total messages in map: 5
-Service 8073 - Received message: 106e7240-c32e-47e0-b88e-cfb2001c9077 -> msg5
-INFO:     127.0.0.1:36196 - "POST /log HTTP/1.1" 200 OK
-INFO:hazelcast_config:Stored message: 3e453149-f2be-4396-b360-f3f775627151 = msg7
-INFO:__main__:Service 8073 - Stored: 3e453149-f2be-4396-b360-f3f775627151 -> msg7
-INFO:__main__:Service 8073 - Total messages in map: 7
-Service 8073 - Received message: 3e453149-f2be-4396-b360-f3f775627151 -> msg7
-INFO:     127.0.0.1:36202 - "POST /log HTTP/1.1" 200 OK
-INFO:hazelcast_config:Stored message: 412a4aa7-c798-4bbb-8ca8-44bf41200001 = msg9
-INFO:__main__:Service 8073 - Stored: 412a4aa7-c798-4bbb-8ca8-44bf41200001 -> msg9
+INFO:hazelcast_config:Stored message: 73f62856-af72-435c-b006-b667deab0780 = msg3
+INFO:__main__:Service 8073 - Stored: 73f62856-af72-435c-b006-b667deab0780 -> msg3
+INFO:__main__:Service 8073 - Total messages in map: 3
+Service 8073 - Received message: 73f62856-af72-435c-b006-b667deab0780 -> msg3
+INFO:     127.0.0.1:52804 - "POST /log HTTP/1.1" 200 OK
+INFO:hazelcast_config:Stored message: c3d86329-2de6-44cd-bf26-8a4dbd724481 = msg4
+INFO:__main__:Service 8073 - Stored: c3d86329-2de6-44cd-bf26-8a4dbd724481 -> msg4
+INFO:__main__:Service 8073 - Total messages in map: 4
+Service 8073 - Received message: c3d86329-2de6-44cd-bf26-8a4dbd724481 -> msg4
+INFO:     127.0.0.1:52806 - "POST /log HTTP/1.1" 200 OK
+INFO:hazelcast_config:Stored message: 9fbf2cd1-e3ff-4584-b4e1-78b507847da3 = msg8
+INFO:__main__:Service 8073 - Stored: 9fbf2cd1-e3ff-4584-b4e1-78b507847da3 -> msg8
+INFO:__main__:Service 8073 - Total messages in map: 8
+Service 8073 - Received message: 9fbf2cd1-e3ff-4584-b4e1-78b507847da3 -> msg8
+INFO:     127.0.0.1:52820 - "POST /log HTTP/1.1" 200 OK
+INFO:hazelcast_config:Stored message: ca2533b8-f19f-4186-a812-a3119e01adb4 = msg9
+INFO:__main__:Service 8073 - Stored: ca2533b8-f19f-4186-a812-a3119e01adb4 -> msg9
 INFO:__main__:Service 8073 - Total messages in map: 9
-Service 8073 - Received message: 412a4aa7-c798-4bbb-8ca8-44bf41200001 -> msg9
-INFO:     127.0.0.1:36210 - "POST /log HTTP/1.1" 200 OK
+Service 8073 - Received message: ca2533b8-f19f-4186-a812-a3119e01adb4 -> msg9
+INFO:     127.0.0.1:52828 - "POST /log HTTP/1.1" 200 OK
 INFO:__main__:Service 8081 - Retrieved all messages: 10 items
-INFO:     127.0.0.1:36224 - "GET /all HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52830 - "GET /all HTTP/1.1" 200 OK

@@ -5,13 +5,14 @@
         [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
         
   @app.on_event("startup")
-INFO:     Started server process [295875]
+INFO:     Started server process [297758]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8011 (Press CTRL+C to quit)
-[messages-service] Stored: {'id': 'ee49df43-023f-4a01-bee8-24723c5a5f96', 'msg': 'msg2'}
-[messages-service] Stored: {'id': '1dcc2cb0-6d71-4767-a4f0-3bd00ee7895a', 'msg': 'msg4'}
-[messages-service] Stored: {'id': 'd418328a-4314-4348-a92d-84d7311f4e70', 'msg': 'msg6'}
-[messages-service] Stored: {'id': '2c72f668-27a8-4ba0-8def-51e4d4e21d70', 'msg': 'msg8'}
-[messages-service] Stored: {'id': 'b3f48c1f-b456-44ae-a2f2-29287f374cc6', 'msg': 'msg10'}
-INFO:     127.0.0.1:58726 - "GET /message HTTP/1.1" 200 OK
+[messages-service] Stored: {'id': '9b68d5ec-d649-4f90-9af7-0fcd0b1c2295', 'msg': 'msg2'}
+[messages-service] Stored: {'id': 'c3d86329-2de6-44cd-bf26-8a4dbd724481', 'msg': 'msg4'}
+[messages-service] Stored: {'id': '3cef780a-0436-4f8f-b908-1e47e90b0efc', 'msg': 'msg6'}
+[messages-service] Stored: {'id': '9fbf2cd1-e3ff-4584-b4e1-78b507847da3', 'msg': 'msg8'}
+[messages-service] Stored: {'id': '8dbbab60-23bb-4f52-9b3d-3a0f32c2b174', 'msg': 'msg10'}
+INFO:     127.0.0.1:41182 - "GET /message HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41190 - "GET /message HTTP/1.1" 200 OK

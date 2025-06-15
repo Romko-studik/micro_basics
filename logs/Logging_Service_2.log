@@ -12,17 +12,17 @@
         [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
         
   @app.on_event("shutdown")
-INFO:     Started server process [295622]
+INFO:     Started server process [297460]
 INFO:     Waiting for application startup.
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is STARTING
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is STARTED
 INFO:hazelcast.connection:Trying to connect to Address(host=127.0.0.1, port=5701)
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is CONNECTED
-INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):19f1d136-c63a-4c99-b616-e0fa5847d361, server version: 5.5.0, local address: Address(host=127.0.0.1, port=56768)
+INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):39ee8dad-7522-4e9f-a17f-aca0f0e70b4e, server version: 5.5.0, local address: Address(host=127.0.0.1, port=60628)
 INFO:hazelcast.cluster:
 
 Members [1] {
-	Member [192.168.0.194]:5701 - 19f1d136-c63a-4c99-b616-e0fa5847d361
+	Member [192.168.0.194]:5701 - 39ee8dad-7522-4e9f-a17f-aca0f0e70b4e
 }
 
 INFO:hazelcast.client:Client started
@@ -30,18 +30,37 @@ INFO:hazelcast_config:Hazelcast client connected: logging-service-8081
 INFO:__main__:Logging Service started on port 8081
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8072 (Press CTRL+C to quit)
-INFO:hazelcast_config:Stored message: ee49df43-023f-4a01-bee8-24723c5a5f96 = msg2
-INFO:__main__:Service 8072 - Stored: ee49df43-023f-4a01-bee8-24723c5a5f96 -> msg2
+INFO:hazelcast_config:Stored message: 001c9923-ef62-4de3-8937-724071a42386 = msg1
+INFO:__main__:Service 8072 - Stored: 001c9923-ef62-4de3-8937-724071a42386 -> msg1
+INFO:__main__:Service 8072 - Total messages in map: 1
+Service 8072 - Received message: 001c9923-ef62-4de3-8937-724071a42386 -> msg1
+INFO:     127.0.0.1:53260 - "POST /log HTTP/1.1" 200 OK
+INFO:hazelcast_config:Stored message: 9b68d5ec-d649-4f90-9af7-0fcd0b1c2295 = msg2
+INFO:__main__:Service 8072 - Stored: 9b68d5ec-d649-4f90-9af7-0fcd0b1c2295 -> msg2
 INFO:__main__:Service 8072 - Total messages in map: 2
-Service 8072 - Received message: ee49df43-023f-4a01-bee8-24723c5a5f96 -> msg2
-INFO:     127.0.0.1:46138 - "POST /log HTTP/1.1" 200 OK
-INFO:hazelcast_config:Stored message: 1dcc2cb0-6d71-4767-a4f0-3bd00ee7895a = msg4
-INFO:__main__:Service 8072 - Stored: 1dcc2cb0-6d71-4767-a4f0-3bd00ee7895a -> msg4
-INFO:__main__:Service 8072 - Total messages in map: 4
-Service 8072 - Received message: 1dcc2cb0-6d71-4767-a4f0-3bd00ee7895a -> msg4
-INFO:     127.0.0.1:46150 - "POST /log HTTP/1.1" 200 OK
-INFO:hazelcast_config:Stored message: b3f48c1f-b456-44ae-a2f2-29287f374cc6 = msg10
-INFO:__main__:Service 8072 - Stored: b3f48c1f-b456-44ae-a2f2-29287f374cc6 -> msg10
+Service 8072 - Received message: 9b68d5ec-d649-4f90-9af7-0fcd0b1c2295 -> msg2
+INFO:     127.0.0.1:53272 - "POST /log HTTP/1.1" 200 OK
+INFO:hazelcast_config:Stored message: 3986553f-2f5e-418d-8a47-2c22123ea7e5 = msg5
+INFO:__main__:Service 8072 - Stored: 3986553f-2f5e-418d-8a47-2c22123ea7e5 -> msg5
+INFO:__main__:Service 8072 - Total messages in map: 5
+Service 8072 - Received message: 3986553f-2f5e-418d-8a47-2c22123ea7e5 -> msg5
+INFO:     127.0.0.1:53284 - "POST /log HTTP/1.1" 200 OK
+INFO:hazelcast_config:Stored message: 3cef780a-0436-4f8f-b908-1e47e90b0efc = msg6
+INFO:__main__:Service 8072 - Stored: 3cef780a-0436-4f8f-b908-1e47e90b0efc -> msg6
+INFO:__main__:Service 8072 - Total messages in map: 6
+Service 8072 - Received message: 3cef780a-0436-4f8f-b908-1e47e90b0efc -> msg6
+INFO:     127.0.0.1:53288 - "POST /log HTTP/1.1" 200 OK
+INFO:hazelcast_config:Stored message: 6a4d383f-6ced-41b7-85a2-aeed2691e0c2 = msg7
+INFO:__main__:Service 8072 - Stored: 6a4d383f-6ced-41b7-85a2-aeed2691e0c2 -> msg7
+INFO:__main__:Service 8072 - Total messages in map: 7
+Service 8072 - Received message: 6a4d383f-6ced-41b7-85a2-aeed2691e0c2 -> msg7
+INFO:     127.0.0.1:53304 - "POST /log HTTP/1.1" 200 OK
+INFO:hazelcast_config:Stored message: 8dbbab60-23bb-4f52-9b3d-3a0f32c2b174 = msg10
+INFO:__main__:Service 8072 - Stored: 8dbbab60-23bb-4f52-9b3d-3a0f32c2b174 -> msg10
 INFO:__main__:Service 8072 - Total messages in map: 10
-Service 8072 - Received message: b3f48c1f-b456-44ae-a2f2-29287f374cc6 -> msg10
-INFO:     127.0.0.1:46160 - "POST /log HTTP/1.1" 200 OK
+Service 8072 - Received message: 8dbbab60-23bb-4f52-9b3d-3a0f32c2b174 -> msg10
+INFO:     127.0.0.1:53312 - "POST /log HTTP/1.1" 200 OK
+INFO:__main__:Service 8081 - Retrieved all messages: 10 items
+INFO:     127.0.0.1:53328 - "GET /all HTTP/1.1" 200 OK
+INFO:__main__:Service 8081 - Retrieved all messages: 10 items
+INFO:     127.0.0.1:53330 - "GET /all HTTP/1.1" 200 OK

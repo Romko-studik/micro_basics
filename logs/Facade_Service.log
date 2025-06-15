@@ -5,18 +5,18 @@
         [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
         
   @app.on_event("startup")
-INFO:     Started server process [295981]
+INFO:     Started server process [297862]
 INFO:     Waiting for application startup.
 INFO:__main__:Facade Service started and clients initialized
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is STARTING
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is STARTED
 INFO:hazelcast.connection:Trying to connect to Address(host=127.0.0.1, port=5701)
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is CONNECTED
-INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):19f1d136-c63a-4c99-b616-e0fa5847d361, server version: 5.5.0, local address: Address(host=127.0.0.1, port=51626)
+INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):39ee8dad-7522-4e9f-a17f-aca0f0e70b4e, server version: 5.5.0, local address: Address(host=127.0.0.1, port=39570)
 INFO:hazelcast.cluster:
 
 Members [1] {
-	Member [192.168.0.194]:5701 - 19f1d136-c63a-4c99-b616-e0fa5847d361
+	Member [192.168.0.194]:5701 - 39ee8dad-7522-4e9f-a17f-aca0f0e70b4e
 }
 
 INFO:hazelcast.client:Client started
@@ -25,99 +25,99 @@ INFO:__main__:Connected to Hazelcast cluster for distributed storage
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
 INFO:__main__:Retrieved 3 instances for service 'logging'
-INFO:__main__:Selected logging service instance: http://localhost:8071
-INFO:httpx:HTTP Request: POST http://localhost:8071/log "HTTP/1.1 200 OK"
-INFO:__main__:Logged message 89023edb-0545-4314-b6cd-247474f71d56 to logging service
-INFO:__main__:Enqueued message {'id': '89023edb-0545-4314-b6cd-247474f71d56', 'msg': 'msg1'}
+INFO:__main__:Selected logging service instance: http://localhost:8072
+INFO:httpx:HTTP Request: POST http://localhost:8072/log "HTTP/1.1 200 OK"
+INFO:__main__:Logged message 001c9923-ef62-4de3-8937-724071a42386 to logging service
+INFO:__main__:Enqueued message {'id': '001c9923-ef62-4de3-8937-724071a42386', 'msg': 'msg1'}
 http://localhost:8005/services/logging
-INFO:     127.0.0.1:40144 - "POST /post HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39970 - "POST /post HTTP/1.1" 200 OK
 INFO:__main__:Retrieved 3 instances for service 'logging'
 INFO:__main__:Selected logging service instance: http://localhost:8072
 INFO:httpx:HTTP Request: POST http://localhost:8072/log "HTTP/1.1 200 OK"
-INFO:__main__:Logged message ee49df43-023f-4a01-bee8-24723c5a5f96 to logging service
-INFO:__main__:Enqueued message {'id': 'ee49df43-023f-4a01-bee8-24723c5a5f96', 'msg': 'msg2'}
+INFO:__main__:Logged message 9b68d5ec-d649-4f90-9af7-0fcd0b1c2295 to logging service
+INFO:__main__:Enqueued message {'id': '9b68d5ec-d649-4f90-9af7-0fcd0b1c2295', 'msg': 'msg2'}
 http://localhost:8005/services/logging
-INFO:     127.0.0.1:40160 - "POST /post HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39978 - "POST /post HTTP/1.1" 200 OK
 INFO:__main__:Retrieved 3 instances for service 'logging'
-INFO:__main__:Selected logging service instance: http://localhost:8071
-INFO:httpx:HTTP Request: POST http://localhost:8071/log "HTTP/1.1 200 OK"
-INFO:__main__:Logged message d1b7e813-d53c-4823-b387-665836d0f302 to logging service
-INFO:__main__:Enqueued message {'id': 'd1b7e813-d53c-4823-b387-665836d0f302', 'msg': 'msg3'}
+INFO:__main__:Selected logging service instance: http://localhost:8073
+INFO:httpx:HTTP Request: POST http://localhost:8073/log "HTTP/1.1 200 OK"
+INFO:__main__:Logged message 73f62856-af72-435c-b006-b667deab0780 to logging service
+INFO:__main__:Enqueued message {'id': '73f62856-af72-435c-b006-b667deab0780', 'msg': 'msg3'}
 http://localhost:8005/services/logging
-INFO:     127.0.0.1:40164 - "POST /post HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39992 - "POST /post HTTP/1.1" 200 OK
+INFO:__main__:Retrieved 3 instances for service 'logging'
+INFO:__main__:Selected logging service instance: http://localhost:8073
+INFO:httpx:HTTP Request: POST http://localhost:8073/log "HTTP/1.1 200 OK"
+INFO:__main__:Logged message c3d86329-2de6-44cd-bf26-8a4dbd724481 to logging service
+INFO:__main__:Enqueued message {'id': 'c3d86329-2de6-44cd-bf26-8a4dbd724481', 'msg': 'msg4'}
+http://localhost:8005/services/logging
+INFO:     127.0.0.1:40004 - "POST /post HTTP/1.1" 200 OK
 INFO:__main__:Retrieved 3 instances for service 'logging'
 INFO:__main__:Selected logging service instance: http://localhost:8072
 INFO:httpx:HTTP Request: POST http://localhost:8072/log "HTTP/1.1 200 OK"
-INFO:__main__:Logged message 1dcc2cb0-6d71-4767-a4f0-3bd00ee7895a to logging service
-INFO:__main__:Enqueued message {'id': '1dcc2cb0-6d71-4767-a4f0-3bd00ee7895a', 'msg': 'msg4'}
+INFO:__main__:Logged message 3986553f-2f5e-418d-8a47-2c22123ea7e5 to logging service
+INFO:__main__:Enqueued message {'id': '3986553f-2f5e-418d-8a47-2c22123ea7e5', 'msg': 'msg5'}
 http://localhost:8005/services/logging
-INFO:     127.0.0.1:40180 - "POST /post HTTP/1.1" 200 OK
-INFO:__main__:Retrieved 3 instances for service 'logging'
-INFO:__main__:Selected logging service instance: http://localhost:8073
-INFO:httpx:HTTP Request: POST http://localhost:8073/log "HTTP/1.1 200 OK"
-INFO:__main__:Logged message 106e7240-c32e-47e0-b88e-cfb2001c9077 to logging service
-INFO:__main__:Enqueued message {'id': '106e7240-c32e-47e0-b88e-cfb2001c9077', 'msg': 'msg5'}
-http://localhost:8005/services/logging
-INFO:     127.0.0.1:40190 - "POST /post HTTP/1.1" 200 OK
-INFO:__main__:Retrieved 3 instances for service 'logging'
-INFO:__main__:Selected logging service instance: http://localhost:8071
-INFO:httpx:HTTP Request: POST http://localhost:8071/log "HTTP/1.1 200 OK"
-INFO:__main__:Logged message d418328a-4314-4348-a92d-84d7311f4e70 to logging service
-INFO:__main__:Enqueued message {'id': 'd418328a-4314-4348-a92d-84d7311f4e70', 'msg': 'msg6'}
-http://localhost:8005/services/logging
-INFO:     127.0.0.1:40192 - "POST /post HTTP/1.1" 200 OK
-INFO:__main__:Retrieved 3 instances for service 'logging'
-INFO:__main__:Selected logging service instance: http://localhost:8073
-INFO:httpx:HTTP Request: POST http://localhost:8073/log "HTTP/1.1 200 OK"
-INFO:__main__:Logged message 3e453149-f2be-4396-b360-f3f775627151 to logging service
-INFO:__main__:Enqueued message {'id': '3e453149-f2be-4396-b360-f3f775627151', 'msg': 'msg7'}
-http://localhost:8005/services/logging
-INFO:     127.0.0.1:40196 - "POST /post HTTP/1.1" 200 OK
-INFO:__main__:Retrieved 3 instances for service 'logging'
-INFO:__main__:Selected logging service instance: http://localhost:8071
-INFO:httpx:HTTP Request: POST http://localhost:8071/log "HTTP/1.1 200 OK"
-INFO:__main__:Logged message 2c72f668-27a8-4ba0-8def-51e4d4e21d70 to logging service
-INFO:__main__:Enqueued message {'id': '2c72f668-27a8-4ba0-8def-51e4d4e21d70', 'msg': 'msg8'}
-http://localhost:8005/services/logging
-INFO:     127.0.0.1:40202 - "POST /post HTTP/1.1" 200 OK
-INFO:__main__:Retrieved 3 instances for service 'logging'
-INFO:__main__:Selected logging service instance: http://localhost:8073
-INFO:httpx:HTTP Request: POST http://localhost:8073/log "HTTP/1.1 200 OK"
-INFO:__main__:Logged message 412a4aa7-c798-4bbb-8ca8-44bf41200001 to logging service
-INFO:__main__:Enqueued message {'id': '412a4aa7-c798-4bbb-8ca8-44bf41200001', 'msg': 'msg9'}
-http://localhost:8005/services/logging
-INFO:     127.0.0.1:40206 - "POST /post HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40010 - "POST /post HTTP/1.1" 200 OK
 INFO:__main__:Retrieved 3 instances for service 'logging'
 INFO:__main__:Selected logging service instance: http://localhost:8072
 INFO:httpx:HTTP Request: POST http://localhost:8072/log "HTTP/1.1 200 OK"
-INFO:__main__:Logged message b3f48c1f-b456-44ae-a2f2-29287f374cc6 to logging service
-INFO:__main__:Enqueued message {'id': 'b3f48c1f-b456-44ae-a2f2-29287f374cc6', 'msg': 'msg10'}
+INFO:__main__:Logged message 3cef780a-0436-4f8f-b908-1e47e90b0efc to logging service
+INFO:__main__:Enqueued message {'id': '3cef780a-0436-4f8f-b908-1e47e90b0efc', 'msg': 'msg6'}
 http://localhost:8005/services/logging
-INFO:     127.0.0.1:40208 - "POST /post HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40018 - "POST /post HTTP/1.1" 200 OK
+INFO:__main__:Retrieved 3 instances for service 'logging'
+INFO:__main__:Selected logging service instance: http://localhost:8072
+INFO:httpx:HTTP Request: POST http://localhost:8072/log "HTTP/1.1 200 OK"
+INFO:__main__:Logged message 6a4d383f-6ced-41b7-85a2-aeed2691e0c2 to logging service
+INFO:__main__:Enqueued message {'id': '6a4d383f-6ced-41b7-85a2-aeed2691e0c2', 'msg': 'msg7'}
+http://localhost:8005/services/logging
+INFO:     127.0.0.1:40024 - "POST /post HTTP/1.1" 200 OK
 INFO:__main__:Retrieved 3 instances for service 'logging'
 INFO:__main__:Selected logging service instance: http://localhost:8073
-INFO:__main__:Retrieved 2 instances for service 'messages'
-INFO:__main__:Selected message service instance: http://localhost:8010/message
-INFO:httpx:HTTP Request: GET http://localhost:8073/all "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: GET http://localhost:8010/message "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://localhost:8073/log "HTTP/1.1 200 OK"
+INFO:__main__:Logged message 9fbf2cd1-e3ff-4584-b4e1-78b507847da3 to logging service
+INFO:__main__:Enqueued message {'id': '9fbf2cd1-e3ff-4584-b4e1-78b507847da3', 'msg': 'msg8'}
 http://localhost:8005/services/logging
-http://localhost:8005/services/messages
-INFO:     127.0.0.1:40214 - "GET /get HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40036 - "POST /post HTTP/1.1" 200 OK
 INFO:__main__:Retrieved 3 instances for service 'logging'
-INFO:__main__:Selected logging service instance: http://localhost:8071
+INFO:__main__:Selected logging service instance: http://localhost:8073
+INFO:httpx:HTTP Request: POST http://localhost:8073/log "HTTP/1.1 200 OK"
+INFO:__main__:Logged message ca2533b8-f19f-4186-a812-a3119e01adb4 to logging service
+INFO:__main__:Enqueued message {'id': 'ca2533b8-f19f-4186-a812-a3119e01adb4', 'msg': 'msg9'}
+http://localhost:8005/services/logging
+INFO:     127.0.0.1:40048 - "POST /post HTTP/1.1" 200 OK
+INFO:__main__:Retrieved 3 instances for service 'logging'
+INFO:__main__:Selected logging service instance: http://localhost:8072
+INFO:httpx:HTTP Request: POST http://localhost:8072/log "HTTP/1.1 200 OK"
+INFO:__main__:Logged message 8dbbab60-23bb-4f52-9b3d-3a0f32c2b174 to logging service
+INFO:__main__:Enqueued message {'id': '8dbbab60-23bb-4f52-9b3d-3a0f32c2b174', 'msg': 'msg10'}
+http://localhost:8005/services/logging
+INFO:     127.0.0.1:40052 - "POST /post HTTP/1.1" 200 OK
+INFO:__main__:Retrieved 3 instances for service 'logging'
+INFO:__main__:Selected logging service instance: http://localhost:8073
 INFO:__main__:Retrieved 2 instances for service 'messages'
 INFO:__main__:Selected message service instance: http://localhost:8011/message
-INFO:httpx:HTTP Request: GET http://localhost:8071/all "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://localhost:8073/all "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: GET http://localhost:8011/message "HTTP/1.1 200 OK"
 http://localhost:8005/services/logging
 http://localhost:8005/services/messages
-INFO:     127.0.0.1:40220 - "GET /get HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40058 - "GET /get HTTP/1.1" 200 OK
 INFO:__main__:Retrieved 3 instances for service 'logging'
-INFO:__main__:Selected logging service instance: http://localhost:8071
+INFO:__main__:Selected logging service instance: http://localhost:8072
+INFO:__main__:Retrieved 2 instances for service 'messages'
+INFO:__main__:Selected message service instance: http://localhost:8011/message
+INFO:httpx:HTTP Request: GET http://localhost:8072/all "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://localhost:8011/message "HTTP/1.1 200 OK"
+http://localhost:8005/services/logging
+http://localhost:8005/services/messages
+INFO:     127.0.0.1:40068 - "GET /get HTTP/1.1" 200 OK
+INFO:__main__:Retrieved 3 instances for service 'logging'
+INFO:__main__:Selected logging service instance: http://localhost:8072
 INFO:__main__:Retrieved 2 instances for service 'messages'
 INFO:__main__:Selected message service instance: http://localhost:8010/message
-INFO:httpx:HTTP Request: GET http://localhost:8071/all "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://localhost:8072/all "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: GET http://localhost:8010/message "HTTP/1.1 200 OK"
 http://localhost:8005/services/logging
 http://localhost:8005/services/messages
-INFO:     127.0.0.1:40234 - "GET /get HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40072 - "GET /get HTTP/1.1" 200 OK
