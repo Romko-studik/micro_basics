@@ -1,0 +1,22 @@
+/home/romko/Documents/UNI/APZ/micro_basics/messages-service/main.py:21: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+INFO:     Started server process [136415]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8011 (Press CTRL+C to quit)
+[messages-service] Stored: {'id': '9fb16ede-7b64-481b-9d5c-0f23152005e8', 'msg': 'msg2'}
+[messages-service] Stored: {'id': '8c171e68-7874-4160-ae34-1178eaaae3c8', 'msg': 'msg4'}
+[messages-service] Stored: {'id': 'e5237bbb-dd41-4cda-a44f-816cc39d2293', 'msg': 'msg6'}
+[messages-service] Stored: {'id': 'db7989dd-b555-447a-a1db-6f7f494d5a8c', 'msg': 'msg8'}
+[messages-service] Stored: {'id': 'b25c51d3-6f0c-4a5d-97f0-610c6e7b2b44', 'msg': 'msg10'}
+INFO:     127.0.0.1:50836 - "GET /message HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50844 - "GET /message HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [136415]

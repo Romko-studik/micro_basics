@@ -6,9 +6,10 @@ from pydantic import BaseModel
 import logging
 from hazelcast_config import HazelcastManager
 import argparse
+# logging-service/main.py
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--port", type=int, default=8000, help="Port to run the service on")
+parser.add_argument("--port", type=int, default=8002, help="Port to run the service on")
 args = parser.parse_args()
 
 # Now you can use:
@@ -93,7 +94,7 @@ async def get_message(message_id: str):
 async def get_all():
     try:
         port = os.getenv("SERVICE_PORT", "8081")
-        all_messages = hazelcast_manager.get_all_messages()
+        all_messages = await hazelcast_manager.get_all_messages()
         
         logger.info(f"Service {port} - Retrieved all messages: {len(all_messages)} items")
         

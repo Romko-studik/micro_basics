@@ -1,0 +1,95 @@
+/home/romko/Documents/UNI/APZ/micro_basics/facade-service/main.py:79: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+INFO:     Started server process [136501]
+INFO:     Waiting for application startup.
+INFO:__main__:Facade Service started and clients initialized
+INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is STARTING
+INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is STARTED
+INFO:hazelcast.connection:Trying to connect to Address(host=127.0.0.1, port=5701)
+INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is CONNECTED
+INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):29ffef32-f8c3-4605-950e-b02bc2d22a45, server version: 5.5.0, local address: Address(host=127.0.0.1, port=36854)
+INFO:hazelcast.cluster:
+
+Members [1] {
+	Member [192.168.0.194]:5701 - 29ffef32-f8c3-4605-950e-b02bc2d22a45
+}
+
+INFO:hazelcast.client:Client started
+INFO:hazelcast_config:Hazelcast client connected: facade-service
+INFO:__main__:Connected to Hazelcast cluster for distributed storage
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+INFO:__main__:Enqueued message {'id': '9806cf65-2881-4099-8109-5f2002ecb34f', 'msg': 'msg1'}
+INFO:     127.0.0.1:33562 - "POST /post HTTP/1.1" 200 OK
+INFO:__main__:Enqueued message {'id': '9fb16ede-7b64-481b-9d5c-0f23152005e8', 'msg': 'msg2'}
+INFO:     127.0.0.1:33578 - "POST /post HTTP/1.1" 200 OK
+INFO:__main__:Enqueued message {'id': 'f192b940-85bb-4837-9c9f-13894ffbab0e', 'msg': 'msg3'}
+INFO:     127.0.0.1:33580 - "POST /post HTTP/1.1" 200 OK
+INFO:__main__:Enqueued message {'id': '8c171e68-7874-4160-ae34-1178eaaae3c8', 'msg': 'msg4'}
+INFO:     127.0.0.1:33596 - "POST /post HTTP/1.1" 200 OK
+INFO:__main__:Enqueued message {'id': '96e15159-27ef-43eb-a3a5-57066446b811', 'msg': 'msg5'}
+INFO:     127.0.0.1:33610 - "POST /post HTTP/1.1" 200 OK
+INFO:__main__:Enqueued message {'id': 'e5237bbb-dd41-4cda-a44f-816cc39d2293', 'msg': 'msg6'}
+INFO:     127.0.0.1:33622 - "POST /post HTTP/1.1" 200 OK
+INFO:__main__:Enqueued message {'id': '7958fee4-b9fd-4dad-ac51-9c2095da9aa0', 'msg': 'msg7'}
+INFO:     127.0.0.1:33634 - "POST /post HTTP/1.1" 200 OK
+INFO:__main__:Enqueued message {'id': 'db7989dd-b555-447a-a1db-6f7f494d5a8c', 'msg': 'msg8'}
+INFO:     127.0.0.1:33646 - "POST /post HTTP/1.1" 200 OK
+INFO:__main__:Enqueued message {'id': '7c32450a-9633-484f-9036-a2653aede5a2', 'msg': 'msg9'}
+INFO:     127.0.0.1:33662 - "POST /post HTTP/1.1" 200 OK
+INFO:__main__:Enqueued message {'id': 'b25c51d3-6f0c-4a5d-97f0-610c6e7b2b44', 'msg': 'msg10'}
+INFO:     127.0.0.1:33670 - "POST /post HTTP/1.1" 200 OK
+INFO:__main__:Retrieved 3 instances for service 'logging'
+INFO:__main__:Selected logging service instance: http://localhost:8071
+INFO:__main__:Retrieved 2 instances for service 'messages'
+INFO:__main__:Selected message service instance: http://localhost:8011/message
+INFO:httpx:HTTP Request: GET http://localhost:8071/all "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://localhost:8011/message "HTTP/1.1 200 OK"
+http://localhost:8005/services/logging
+http://localhost:8005/services/messages
+INFO:     127.0.0.1:33682 - "GET /get HTTP/1.1" 200 OK
+INFO:__main__:Retrieved 3 instances for service 'logging'
+INFO:__main__:Selected logging service instance: http://localhost:8073
+INFO:__main__:Retrieved 2 instances for service 'messages'
+INFO:__main__:Selected message service instance: http://localhost:8010/message
+INFO:httpx:HTTP Request: GET http://localhost:8073/all "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://localhost:8010/message "HTTP/1.1 200 OK"
+http://localhost:8005/services/logging
+http://localhost:8005/services/messages
+INFO:     127.0.0.1:33690 - "GET /get HTTP/1.1" 200 OK
+INFO:__main__:Retrieved 3 instances for service 'logging'
+INFO:__main__:Selected logging service instance: http://localhost:8072
+INFO:__main__:Retrieved 2 instances for service 'messages'
+INFO:__main__:Selected message service instance: http://localhost:8011/message
+INFO:httpx:HTTP Request: GET http://localhost:8072/all "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://localhost:8011/message "HTTP/1.1 200 OK"
+http://localhost:8005/services/logging
+http://localhost:8005/services/messages
+INFO:     127.0.0.1:33700 - "GET /get HTTP/1.1" 200 OK
+WARNING:hazelcast.connection:Heartbeat failed over the connection: Connection(id=0, live=True, remote_address=Address(host=192.168.0.194, port=5701))
+INFO:hazelcast.connection:Connection(id=0, live=False, remote_address=Address(host=192.168.0.194, port=5701)) closed. Reason: Heartbeat timed out
+INFO:hazelcast.connection:Removed connection to Address(host=192.168.0.194, port=5701):29ffef32-f8c3-4605-950e-b02bc2d22a45, connection: Connection(id=0, live=False, remote_address=Address(host=192.168.0.194, port=5701))
+INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is DISCONNECTED
+INFO:hazelcast.connection:Trying to connect to Member [192.168.0.194]:5701 - 29ffef32-f8c3-4605-950e-b02bc2d22a45
+WARNING:hazelcast.connection:Error during initial connection to Member [192.168.0.194]:5701 - 29ffef32-f8c3-4605-950e-b02bc2d22a45
+Traceback (most recent call last):
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/connection.py", line 579, in _connect
+    return get_or_connect_func(target).result()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/future.py", line 255, in result
+    re_raise(self._exception, self._traceback)
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/util.py", line 448, in re_raise
+    raise exception.with_traceback(traceback)
+OSError: [Errno 101] ENETUNREACH
+INFO:hazelcast.connection:Trying to connect to Address(host=127.0.0.1, port=5701)
+INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is CONNECTED
+INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):29ffef32-f8c3-4605-950e-b02bc2d22a45, server version: 5.5.0, local address: Address(host=127.0.0.1, port=52410)
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [136501]

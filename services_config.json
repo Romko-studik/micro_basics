@@ -21,16 +21,12 @@
       {
         "ip": "localhost",
         "port": 8011
-      },
-      {
-        "ip": "localhost",
-        "port": 8012
       }
     ],
     "facade": [
       {
         "ip": "localhost",
-        "port": 8000
+        "port": 8001
       }
     ]
   }
