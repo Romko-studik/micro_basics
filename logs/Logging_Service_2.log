@@ -1,28 +1,53 @@
-/home/romko/Documents/UNI/APZ/micro_basics/logging-service/main.py:32: DeprecationWarning: 
+/home/romko/Documents/UNI/APZ/micro_basics/logging-service/main.py:44: DeprecationWarning: 
         on_event is deprecated, use lifespan event handlers instead.
 
         Read more about it in the
         [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
         
   @app.on_event("startup")
-/home/romko/Documents/UNI/APZ/micro_basics/logging-service/main.py:45: DeprecationWarning: 
+/home/romko/Documents/UNI/APZ/micro_basics/logging-service/main.py:58: DeprecationWarning: 
         on_event is deprecated, use lifespan event handlers instead.
 
         Read more about it in the
         [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
         
   @app.on_event("shutdown")
-INFO:     Started server process [136122]
+INFO:     Started server process [247430]
 INFO:     Waiting for application startup.
+INFO:hazelcast_config:Connecting Hazelcast to cluster 'dev' at ['127.0.0.1:5701', '127.0.0.1:5702']
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is STARTING
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is STARTED
+INFO:hazelcast.connection:Trying to connect to Address(host=127.0.0.1, port=5702)
+INFO:hazelcast.connection:Connection(id=0, live=False, remote_address=None) closed. Reason: [Errno 111] Connection refused
+WARNING:hazelcast.connection:Error during initial connection to Address(host=127.0.0.1, port=5702)
+Traceback (most recent call last):
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/connection.py", line 579, in _connect
+    return get_or_connect_func(target).result()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/future.py", line 63, in result
+    re_raise(self._exception, self._traceback)
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/util.py", line 450, in re_raise
+    raise exception
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/future.py", line 154, in callback
+    result = continuation_func(f, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/connection.py", line 626, in _on_auth
+    raise e
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/connection.py", line 623, in _on_auth
+    response = client_authentication_codec.decode_response(response.result())
+                                                           ^^^^^^^^^^^^^^^^^
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/future.py", line 63, in result
+    re_raise(self._exception, self._traceback)
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/util.py", line 450, in re_raise
+    raise exception
+hazelcast.errors.TargetDisconnectedError: [Errno 111] Connection refused
 INFO:hazelcast.connection:Trying to connect to Address(host=127.0.0.1, port=5701)
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is CONNECTED
-INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):29ffef32-f8c3-4605-950e-b02bc2d22a45, server version: 5.5.0, local address: Address(host=127.0.0.1, port=58800)
+INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):bb7a7017-18a8-41e4-8f0e-4dece8399760, server version: 5.5.0, local address: Address(host=127.0.0.1, port=35020)
 INFO:hazelcast.cluster:
 
 Members [1] {
-	Member [192.168.0.194]:5701 - 29ffef32-f8c3-4605-950e-b02bc2d22a45
+	Member [192.168.0.194]:5701 - bb7a7017-18a8-41e4-8f0e-4dece8399760
 }
 
 INFO:hazelcast.client:Client started
@@ -30,15 +55,54 @@ INFO:hazelcast_config:Hazelcast client connected: logging-service-8081
 INFO:__main__:Logging Service started on port 8081
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8072 (Press CTRL+C to quit)
-ERROR:hazelcast_config:Error retrieving all messages: object Future can't be used in 'await' expression
-INFO:__main__:Service 8081 - Retrieved all messages: 0 items
-INFO:     127.0.0.1:38538 - "GET /all HTTP/1.1" 200 OK
-WARNING:hazelcast.connection:Heartbeat failed over the connection: Connection(id=0, live=True, remote_address=Address(host=192.168.0.194, port=5701))
-INFO:hazelcast.connection:Connection(id=0, live=False, remote_address=Address(host=192.168.0.194, port=5701)) closed. Reason: Heartbeat timed out
-INFO:hazelcast.connection:Removed connection to Address(host=192.168.0.194, port=5701):29ffef32-f8c3-4605-950e-b02bc2d22a45, connection: Connection(id=0, live=False, remote_address=Address(host=192.168.0.194, port=5701))
+WARNING:hazelcast.connection:Heartbeat failed over the connection: Connection(id=1, live=True, remote_address=Address(host=192.168.0.194, port=5701))
+INFO:hazelcast.connection:Connection(id=1, live=False, remote_address=Address(host=192.168.0.194, port=5701)) closed. Reason: Heartbeat timed out
+INFO:hazelcast.connection:Removed connection to Address(host=192.168.0.194, port=5701):bb7a7017-18a8-41e4-8f0e-4dece8399760, connection: Connection(id=1, live=False, remote_address=Address(host=192.168.0.194, port=5701))
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is DISCONNECTED
-INFO:hazelcast.connection:Trying to connect to Member [192.168.0.194]:5701 - 29ffef32-f8c3-4605-950e-b02bc2d22a45
-WARNING:hazelcast.connection:Error during initial connection to Member [192.168.0.194]:5701 - 29ffef32-f8c3-4605-950e-b02bc2d22a45
+INFO:hazelcast.connection:Trying to connect to Member [192.168.0.194]:5701 - bb7a7017-18a8-41e4-8f0e-4dece8399760
+WARNING:hazelcast.connection:Error during initial connection to Member [192.168.0.194]:5701 - bb7a7017-18a8-41e4-8f0e-4dece8399760
+Traceback (most recent call last):
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/connection.py", line 579, in _connect
+    return get_or_connect_func(target).result()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/future.py", line 255, in result
+    re_raise(self._exception, self._traceback)
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/util.py", line 448, in re_raise
+    raise exception.with_traceback(traceback)
+OSError: [Errno 101] ENETUNREACH
+INFO:hazelcast.connection:Trying to connect to Address(host=127.0.0.1, port=5702)
+INFO:hazelcast.connection:Connection(id=3, live=False, remote_address=None) closed. Reason: [Errno 111] Connection refused
+WARNING:hazelcast.connection:Error during initial connection to Address(host=127.0.0.1, port=5702)
+Traceback (most recent call last):
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/connection.py", line 579, in _connect
+    return get_or_connect_func(target).result()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/future.py", line 63, in result
+    re_raise(self._exception, self._traceback)
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/util.py", line 450, in re_raise
+    raise exception
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/future.py", line 154, in callback
+    result = continuation_func(f, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/connection.py", line 626, in _on_auth
+    raise e
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/connection.py", line 623, in _on_auth
+    response = client_authentication_codec.decode_response(response.result())
+                                                           ^^^^^^^^^^^^^^^^^
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/future.py", line 63, in result
+    re_raise(self._exception, self._traceback)
+  File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/util.py", line 450, in re_raise
+    raise exception
+hazelcast.errors.TargetDisconnectedError: [Errno 111] Connection refused
+INFO:hazelcast.connection:Trying to connect to Address(host=127.0.0.1, port=5701)
+INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is CONNECTED
+INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):bb7a7017-18a8-41e4-8f0e-4dece8399760, server version: 5.5.0, local address: Address(host=127.0.0.1, port=53218)
+WARNING:hazelcast.connection:Heartbeat failed over the connection: Connection(id=4, live=True, remote_address=Address(host=192.168.0.194, port=5701))
+INFO:hazelcast.connection:Connection(id=4, live=False, remote_address=Address(host=192.168.0.194, port=5701)) closed. Reason: Heartbeat timed out
+INFO:hazelcast.connection:Removed connection to Address(host=192.168.0.194, port=5701):bb7a7017-18a8-41e4-8f0e-4dece8399760, connection: Connection(id=4, live=False, remote_address=Address(host=192.168.0.194, port=5701))
+INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is DISCONNECTED
+INFO:hazelcast.connection:Trying to connect to Member [192.168.0.194]:5701 - bb7a7017-18a8-41e4-8f0e-4dece8399760
+WARNING:hazelcast.connection:Error during initial connection to Member [192.168.0.194]:5701 - bb7a7017-18a8-41e4-8f0e-4dece8399760
 Traceback (most recent call last):
   File "/home/romko/.local/lib/python3.12/site-packages/hazelcast/connection.py", line 579, in _connect
     return get_or_connect_func(target).result()
@@ -50,13 +114,4 @@ Traceback (most recent call last):
 OSError: [Errno 101] ENETUNREACH
 INFO:hazelcast.connection:Trying to connect to Address(host=127.0.0.1, port=5701)
 INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is CONNECTED
-INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):29ffef32-f8c3-4605-950e-b02bc2d22a45, server version: 5.5.0, local address: Address(host=127.0.0.1, port=52392)
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is SHUTTING_DOWN
-INFO:hazelcast.connection:Removed connection to Address(host=192.168.0.194, port=5701):29ffef32-f8c3-4605-950e-b02bc2d22a45, connection: Connection(id=2, live=False, remote_address=Address(host=192.168.0.194, port=5701))
-INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is DISCONNECTED
-INFO:hazelcast.lifecycle:HazelcastClient 5.5.0 is SHUTDOWN
-INFO:hazelcast_config:Hazelcast client disconnected
-INFO:     Application shutdown complete.
-INFO:     Finished server process [136122]
+INFO:hazelcast.connection:Authenticated with server Address(host=192.168.0.194, port=5701):bb7a7017-18a8-41e4-8f0e-4dece8399760, server version: 5.5.0, local address: Address(host=127.0.0.1, port=40522)

@@ -1,4 +1,4 @@
-import os
+import os, socket
 import sys
 import uvicorn
 from fastapi import FastAPI, Request, HTTPException
@@ -6,6 +6,7 @@ from pydantic import BaseModel
 import logging
 from hazelcast_config import HazelcastManager
 import argparse
+import consul
 # logging-service/main.py
 
 parser = argparse.ArgumentParser()
@@ -29,8 +30,32 @@ class MessageResponse(BaseModel):
     status: str
     message: str = ""
 
+def register_service(service_name, port):
+    service_id = f"{service_name}-{port}"
+    local_ip = socket.gethostbyname(socket.gethostname())
+    c.agent.service.register(
+        name=service_name,
+        service_id=service_id,
+        address=local_ip,
+        port=port,
+        check={
+            "http": f"http://{local_ip}:{port}/health",
+            "interval": "10s",
+            "timeout": "5s",
+            "DeregisterCriticalServiceAfter": "1m"
+        }
+    )
+
+def read_kv(key):
+    c = consul.Consul()
+    index, data = c.kv.get(key)
+    return data["Value"].decode() if data else None
+
 @app.on_event("startup")
 async def startup_event():
+    global c
+    c = consul.Consul()
+    register_service("logging-service", PORT)
     """Initialize Hazelcast connection on startup"""
     global hazelcast_manager
     
@@ -103,6 +128,19 @@ async def get_all():
     except Exception as e:
         logger.error(f"Error retrieving all messages: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.on_event("shutdown")
+async def shutdown_event():
+    try:
+        c.agent.service.deregister(f"logging-service-{PORT}")
+        print(f"Deregistered logging-service-{PORT}")
+    except Exception as e:
+        print(f"Failed to deregister: {e}")
+
+
+@app.get("/health")
+def health():
+    return {"status": "healthy"}
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=PORT)

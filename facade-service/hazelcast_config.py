@@ -1,22 +1,35 @@
 import hazelcast
 import logging
-
+import consul
 logger = logging.getLogger(__name__)
+
+def create_hazelcast_client() -> hazelcast.HazelcastClient:
+    # read cluster config from Consul
+    cluster = read_kv("hazelcast/cluster_name")
+    members = read_kv("hazelcast/members").split(",")
+    logger.info(f"Connecting Hazelcast to cluster '{cluster}' at {members}")
+    client = hazelcast.HazelcastClient(
+        cluster_name=cluster,
+        cluster_members=members,
+    )
+    return client
+
+def read_kv(key):
+    c = consul.Consul()
+    index, data = c.kv.get(key)
+    return data["Value"].decode() if data else None
 
 class HazelcastManager:
     def __init__(self, cluster_name="dev", instance_name=None):
-        self.cluster_name = cluster_name
         self.instance_name = instance_name or f"logging-service-{id(self)}"
         self.client = None
-        self.messages_map = None
-        self.queue = None  
 
     def connect(self):
         """Initialize Hazelcast client"""
         try:
-            self.client = hazelcast.HazelcastClient(cluster_name=self.cluster_name)
-            self.messages_map = self.client.get_map("distributed-map")
-            self.queue = self.client.get_queue("distributed-queue")
+            self.client = create_hazelcast_client()
+            self.messages_map = self.client.get_map(read_kv("map/name"))
+            self.queue = self.client.get_queue(read_kv("queue/name"))
             logger.info(f"Hazelcast client connected: {self.instance_name}")
         except Exception as e:
             logger.error(f"Failed to connect to Hazelcast: {e}")

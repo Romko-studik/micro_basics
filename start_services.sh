@@ -110,6 +110,28 @@ echo -e "${YELLOW}Cleaning up ports...${NC}"
 cleanup_ports
 podman run --replace -d --name hazelcast -p 5701:5701 hazelcast/hazelcast:latest 
 echo -e "${GREEN}Started Hazelcast in Podman${NC}"
+# в окремому терміналі або знову через start_services.sh
+consul agent -dev -client=0.0.0.0 > logs/consul.log 2>&1 &
+CONSUL_PID=$!
+echo "Consul agent started (PID $CONSUL_PID)"
+echo -e "${GREEN}Started Consul agent${NC}"
+# Wait for Consul to start
+echo -e "${YELLOW}Waiting for Consul to become ready...${NC}"
+for i in {1..10}; do
+  if curl -s http://127.0.0.1:8500/v1/status/leader >/dev/null; then
+    echo -e "${GREEN}Consul is ready${NC}"
+    break
+  fi
+  sleep 1
+done
+
+# приклад через CLI
+consul kv put hazelcast/cluster_name dev
+consul kv put hazelcast/members 127.0.0.1:5701,127.0.0.1:5702
+consul kv put queue/name message-queue
+consul kv put map/name message-map
+echo -e "${GREEN}Initialized Consul KV store${NC}"
+
 start_service "Config Service" "python3 config-service/main.py" 8005
 
 start_service "Logging Service 1" "python3 logging-service/main.py --port 8071" 8071

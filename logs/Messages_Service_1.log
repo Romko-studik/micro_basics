@@ -1,21 +1,42 @@
-/home/romko/Documents/UNI/APZ/micro_basics/messages-service/main.py:21: DeprecationWarning: 
+/home/romko/Documents/UNI/APZ/micro_basics/messages-service/main.py:37: DeprecationWarning: 
         on_event is deprecated, use lifespan event handlers instead.
 
         Read more about it in the
         [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
         
   @app.on_event("startup")
-INFO:     Started server process [136333]
+/home/romko/Documents/UNI/APZ/micro_basics/messages-service/main.py:63: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [247604]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8010 (Press CTRL+C to quit)
-[messages-service] Stored: {'id': '9806cf65-2881-4099-8109-5f2002ecb34f', 'msg': 'msg1'}
-[messages-service] Stored: {'id': 'f192b940-85bb-4837-9c9f-13894ffbab0e', 'msg': 'msg3'}
-[messages-service] Stored: {'id': '96e15159-27ef-43eb-a3a5-57066446b811', 'msg': 'msg5'}
-[messages-service] Stored: {'id': '7958fee4-b9fd-4dad-ac51-9c2095da9aa0', 'msg': 'msg7'}
-[messages-service] Stored: {'id': '7c32450a-9633-484f-9036-a2653aede5a2', 'msg': 'msg9'}
-INFO:     127.0.0.1:34782 - "GET /message HTTP/1.1" 200 OK
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [136333]
+INFO:     192.168.0.194:39920 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:41986 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:48980 - "GET /health HTTP/1.1" 200 OK
+[messages-service] Stored: {'id': '06c9868b-c491-45e4-9cb3-e3006e49fd63', 'msg': 'msg1'}
+[messages-service] Stored: {'id': 'c099b171-89f6-45b5-b64c-7256788ba680', 'msg': 'msg3'}
+[messages-service] Stored: {'id': '2df2f760-7c96-4e9a-9ca3-a607dafabcee', 'msg': 'msg5'}
+[messages-service] Stored: {'id': 'b2a8f14d-21ea-435f-b928-0343fa22e45d', 'msg': 'msg7'}
+[messages-service] Stored: {'id': '259438f0-e1e7-4447-a27a-6bfb29dd9b76', 'msg': 'msg9'}
+INFO:     127.0.0.1:36866 - "GET /message HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36878 - "GET /message HTTP/1.1" 200 OK
+INFO:     192.168.0.194:49828 - "GET /health HTTP/1.1" 200 OK
+Error taking from queue: Heartbeat timed out
+INFO:     192.168.0.194:51684 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:45630 - "GET /health HTTP/1.1" 200 OK
+Error taking from queue: Heartbeat timed out
+INFO:     192.168.0.194:45402 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:59758 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:50216 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:47226 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:47434 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:56832 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:43752 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:43588 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.0.194:35760 - "GET /health HTTP/1.1" 200 OK
